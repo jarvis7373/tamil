@@ -1,4 +1,4 @@
-package com.thinkspace.configuration;
+package com.jarvis.configuration;
 
 import java.util.Properties;
 
@@ -25,7 +25,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({ "com.thinkspace.configuration" })
+@ComponentScan({ "com.jarvis.configuration" })
 @PropertySource(value = { "classpath:application.properties" })
 public class HibernateConfiguration {
 
@@ -37,7 +37,7 @@ public class HibernateConfiguration {
 		
 		LocalSessionFactoryBean sessionFactory=new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource());
-		sessionFactory.setPackagesToScan(new String[]{"com.thinkspace.model"});
+		sessionFactory.setPackagesToScan(new String[]{"com.jarvis.model"});
 		sessionFactory.setHibernateProperties(hibernateProperties());
 		return sessionFactory;
 	}
